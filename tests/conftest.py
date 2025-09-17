@@ -426,6 +426,11 @@ def xdp_app_info(request) -> xdp.AppInfo:
             app_name="test",
         )
 
+    if app_info_kind == xdp.AppInfoKind.LINYAPS:
+        return xdp.AppInfo.new_linyaps(
+            app_id=app_id,
+        )
+
     assert_never(app_info_kind)
 
 
